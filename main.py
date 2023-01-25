@@ -23,6 +23,7 @@ async def websocket_endpoint(websocket: WebSocket):
             data['number'] = message_number
             await websocket.send_json(data)
             message_number += 1
+            
     except WebSocketDisconnect:
         message_number = 0
         pass
